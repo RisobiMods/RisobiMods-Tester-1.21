@@ -1,4 +1,4 @@
-package com.risobimods.tester;
+package net.risobimods.risobimobs;
 
 import java.util.List;
 

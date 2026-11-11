@@ -1,4 +1,4 @@
-package com.risobimods.tester;
+package net.risobimods.risobimobs;
 
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
@@ -11,9 +11,9 @@ import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
-@Mod(value = Tester.MOD_ID, dist = Dist.CLIENT)
+@Mod(value = RisobiMobs.MOD_ID, dist = Dist.CLIENT)
 // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-@EventBusSubscriber(modid = Tester.MOD_ID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = RisobiMobs.MOD_ID, value = Dist.CLIENT)
 public class ExampleModClient {
     public ExampleModClient(ModContainer container) {
         // Allows NeoForge to create a config screen for this mod's configs.
@@ -25,7 +25,7 @@ public class ExampleModClient {
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
         // Some client setup code
-        Tester.LOGGER.info("HELLO FROM CLIENT SETUP");
-        Tester.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        RisobiMobs.LOGGER.info("HELLO FROM CLIENT SETUP");
+        RisobiMobs.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }
 }
