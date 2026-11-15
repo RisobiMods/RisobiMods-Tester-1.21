@@ -17,7 +17,7 @@ public class ModEntities {
 
     public static final Supplier<EntityType<ScaryEntity>> SCARY =
             ENTITY_TYPES.register("scary", () -> EntityType.Builder.of(ScaryEntity::new, MobCategory.MONSTER)
-                    .sized(1, 2).build("scary"));
+                    .sized(1, 4).build("scary"));
 
 
     public static void register(IEventBus eventBus) {
