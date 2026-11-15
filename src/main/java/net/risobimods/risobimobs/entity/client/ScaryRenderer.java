@@ -16,11 +16,13 @@ public class ScaryRenderer extends MobRenderer<ScaryEntity, ScaryModel<ScaryEnti
 
     @Override
     public ResourceLocation getTextureLocation(ScaryEntity entity) {
-        return ResourceLocation.fromNamespaceAndPath(RisobiMobs.MOD_ID, "textures/entity/scary/");
+        return ResourceLocation.fromNamespaceAndPath(RisobiMobs.MOD_ID, "textures/entity/scary/scary.png");
     }
 
     @Override
     public void render(ScaryEntity entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
+
+
         super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
     }
 }

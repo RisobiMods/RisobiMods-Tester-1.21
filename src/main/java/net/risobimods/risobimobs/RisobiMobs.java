@@ -1,6 +1,11 @@
 package net.risobimods.risobimobs;
 
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.risobimods.risobimobs.entity.ModEntities;
+import net.risobimods.risobimobs.entity.client.ScaryRenderer;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -53,5 +58,14 @@ public class RisobiMobs {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
 
+    }
+
+    @EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT)
+    public static class ClientModEvents {
+        @SubscribeEvent
+        public static void  onClientStartup(FMLClientSetupEvent event) {
+
+            EntityRenderers.register(ModEntities.SCARY.get(), ScaryRenderer::new);
+        }
     }
 }
